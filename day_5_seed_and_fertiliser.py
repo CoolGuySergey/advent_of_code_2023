@@ -115,12 +115,55 @@ def main_calculator(in_val, in_lists):
     
     return out_val
 
+
 #========================================================================================================
 # MAIN
 
+#ans_list = []
+
+#for seed in seed_list:
+
+    #cur_in_val = int(seed)
+    
+    #for m in map_list:
+        
+        #next_in_val = main_calculator(cur_in_val, m)
+
+        #cur_in_val = next_in_val
+        
+    #ans_list.append(cur_in_val)
+
+#print(min(ans_list))
+
+
+#========================================================================================================
+
+# Part 2
+
+
+# The values on the initial seeds: line come in pairs.
+# Within each pair, the first value is the start of the range and the second value is the length of the range.
+
+# So, in the first line of the example above:
+# Seeds: 79 14 55 13
+# The first range starts with seed number 79 and contains 14 values: 79, 80, ..., 91, 92.
+# The second range starts with seed number 55 and contains 13 values: 55, 56, ..., 66, 67.
+
+# Lowest location number can be obtained from seed number 82,
+# which corresponds to soil 84, fertilizer 84, water 84, light 77, temperature 45, humidity 46, and location 46.
+# So, the lowest location number is 46.
+# NOW what is the lowest location number that corresponds to any of the initial seed numbers?
+
+new_seed_list = []
+
+i=0
+while i in range(len(seed_list)):
+    new_seed_list = new_seed_list + list(range(int(seed_list[i]), int(seed_list[i]) + int(seed_list[i+1])))
+    i += 2
+
 ans_list = []
 
-for seed in seed_list:
+for seed in new_seed_list:
 
     cur_in_val = int(seed)
     
